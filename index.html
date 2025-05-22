@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THINGSTEER</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/a.png" type="image/x-icon" />
+</head>
+
+
+<body class="background-animation">
+  
+  <!-- <section class="hero">
+    <video autoplay muted loop class="bg-v">
+      <source src="assets/motion-animation.mp4" type="video/mp4">
+    </video>
+  </section> -->
+
+
+  <section class="hero1">
+    <video autoplay muted loop playsinline class="bg-video1">
+      <source src="assets/motion-animation2.mp4" type="video/mp4" />
+      
+    </video>
+    <div class="logo-center1">
+      <img src="assets/logo.png" alt="Thingsteer Logo" class="logo1"/>
+    </div>
+  </section>
+
+ <div class="sticky-header">
+    <img src="assets/logo.png" class="logo"/>
+  </div>
+
+   <div class="hero feature-box1"style= "padding-left: 20px;
+    padding-right: 20px;" >
+    <iframe
+    width="100%"
+    height="100%"
+    
+    src="https://www.youtube.com/embed/_yhk8ECA6lU?si=-1GPqsYQjNDRwcT7"
+    title="Thingsteer Product Demo"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+     
+  </div>
+
+
+
+<!-- Chatbot Icon -->
+  <div class="chatbot-container">
+    <div class="chatbot-icon" onclick="toggleChat()">
+      💬
+      <!-- <img src="assets/a.png"/> -->
+    </div>
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-header">Thingsteer Assistant</div>
+      <div class="chat-body" id="chatBody">
+        <div class="bot-msg">Hi there! How can I help you today?</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Type a message..." onkeydown="handleKey(event)" />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="ambient-audio" loop autoplay>
+    <source src="assets/audio/ambient.mp3" type="audio/mpeg" />
+  </audio>
+
+  
+  <section class="features">
+  <button class="feature-box" onclick="showTeamImage()">Our Team</button>
+  
+ 
+  <button class="feature-box" onclick="scrollToTop();showCards('clients')"> Clients</button>
+  <button class="feature-box" onclick="scrollToTop();showCards('achievements')"> Achievements</button>
+</section>
+<div id="team-image-container" style="display: none; text-align: center; margin-top: 20px; overflow: hidden; transition: max-height 0.5s ease;">
+  <img src="assets/team.png" alt="Team Image" style="width:80%; height:auto; object-fit: cover;" />
+</div>
+
+<script>
+  function showTeamImage() {
+    const teamImageContainer = document.getElementById('team-image-container');
+    teamImageContainer.style.display = 'block';
+  }
+
+  function hideTeamImage() {
+    const teamImageContainer = document.getElementById('team-image-container');
+    teamImageContainer.style.display = 'none';
+  }
+
+  // // Hide the team image when scrolling
+  // window.addEventListener('scroll', hideTeamImage);
+
+  // Hide the team image when clicking other buttons
+  const buttons = document.querySelectorAll('.feature-box');
+  buttons.forEach(button => {
+    button.addEventListener('click', (event) => {
+      if (event.target.innerText !== 'Our Team') {
+        hideTeamImage();
+      }
+    });
+  });
+</script>
+<script>
+  function scrollToTop() {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth' // Smooth scrolling effect
+    });
+  }
+</script>
+
+<div id="cards-container" style="margin-top: 20px; display: flex; flex-wrap: wrap;"></div>
+
+  <footer class="footer-about">
+  <section class="about">
+    <h2>Intelligent Automation by Design</h2>
+    <p>At Thingsteer, we fuse innovation with execution. Our AI-powered platforms and automation-first thinking are transforming industries.</p>
+  </section>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
