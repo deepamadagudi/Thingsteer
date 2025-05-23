@@ -1,7 +1,7 @@
 import google.generativeai as genai
 
-# Configure Gemini
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+# Configure Geminiapi_key
+genai.configure(=os.getenv("GOOGLE_API_KEY"))
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 def optimize_response(user_input: str) -> str:

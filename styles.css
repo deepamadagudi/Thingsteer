@@ -412,7 +412,7 @@ html, body {
 .cover {
   top: 0;
   position: absolute;
-  background-color: lightgray;
+  background-color: #fff;
   /* margin: 38px; */
   width: 100%;
   height: 100%;
@@ -448,7 +448,7 @@ html, body {
   width: 100%;
   height: 70%; /* Adjust height as needed */
   object-fit: cover; /* Ensure the image scales properly */
-  border-radius: 10px 10px 0 0; /* Rounded corners for the top of the card */
+  
 }
 
 p {
@@ -456,5 +456,115 @@ p {
   font-weight: bolder;
 }
 
+.projects{
+  display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-left: 64px;
+}
+.cardbuttons{
+  padding: 8px;
+    border: navajowhite;
+    background-color: #00bcd2;
+    font-weight: 700;
+    border-radius: 14px;
+    color: #fcfcfc;
+}
+
+.cardbuttons:hover {
+  background-color: rgba(27, 127, 204, .8);
+  box-shadow: 2px 3px 4px #514a4a;
+  cursor: pointer;
+}
+.achivement{
+  width: 100%;
+}
+.achivement-list{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-left: 90px;
+  margin-right: 90px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: #a97852;
+  color: white;
+    font-weight: 700;
+}
 
 
+
+.monitor-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.monitor {
+  position: relative;
+  width: 76vw;
+  height: 84vh;
+  background: white; /* White monitor */
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  border: 10px solid #ddd; /* Soft outer border */
+}
+
+.video-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.stand {
+  width: 150px;
+  height: 60px;
+  background: #fc9c16;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  /* margin-top: -10px; */
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+
+.scroll-spacer {
+  align-items: center;
+  background-color: #1a1a1a;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  height: 75vh;
+  margin: 1em auto;
+  width: 90%;
+}
+video {
+  display: block;
+  height: auto;
+  margin: auto;
+  position: relative;
+  width: 100%;
+}
+.video-wrap {
+  margin: 0 auto;
+  position: relative;
+  width: 90%;
+}
+.video-wrap:after {
+  /* border-bottom: 1px solid red; */
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}

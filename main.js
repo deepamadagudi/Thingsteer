@@ -180,24 +180,57 @@ function showCards(category) {
   cardsContainer.innerHTML = ''; // Clear existing cards
 
   const cardsData = {
-    // team: ['<img src="assets/team.png" alt="Team Image" style="width:100%; height:auto;">'],
-    clients: ['Client 1', 'Client 2', 'Client 3', 'Client 4', 'Client 3'],
-    achievements: ['Achievement 1', 'Achievement 2', 'Achievement 3', 'Achievement 4']
+    clients: [
+      { text: 'Mindmill supports organisations in recruiting, developing, and retaining top talent. By streamlining and automating traditionally admin-heavy processes, we reduce costs and improve operational efficiency.....', 
+        image: 'assets/mindmill.png',
+      projects:[{name:'Careermaps'},{name:'Testbulider'}]
+    },
+      { text: 'Client 2', 
+        image: 'assets/Centria.png',
+        projects:[{name:'Autism'},{name:' Automation - AI'}] },
+      { text: 'Client 3', 
+        image: 'assets/eTrack.png',
+        projects:[{name:'eTrack-Client'},{name:'etrack-SFM'}] },
+      { text: 'Client 4', 
+        image: 'assets/Motorola.png', 
+        projects:[{name:'NGCAT'},{name:'UGW'},{name:'OnePortal'}] },
+      { text: 'Client 5', 
+        image: 'assets/amfa1.jpg',
+        projects:[{name:'AMFA'}] },
+      { text: 'Client 6', 
+        image: 'assets/capillary.png', 
+         projects:[{name:'LMS'}] }
+    ]
+   
   };
 
   const selectedCards = cardsData[category] || [];
 
-  selectedCards.forEach((text) => {
+  selectedCards.forEach(({ text, image, hoverText, projects }) => {
     const card = document.createElement('div');
     card.className = 'book';
     card.innerHTML = `
-      <p>${text}</p>
-      <div class="cover">
-        <p>Hover Me</p>
+      <div id="info">
+        <div id="projects" class="projects"></div>
+      </div>
+      <div class="cover" style="padding:26px; background-size: cover; background-position: center;">
+        <div>
+          <img src='${image}' alt='Image description' class="responsive-image">
+        </div>
       </div>
     `;
     cardsContainer.appendChild(card);
+  
+    const projectsContainer = card.querySelector('#projects');
+    projects.forEach(project => {
+      const projectButton = document.createElement('button');
+      projectButton.className = 'btn btn-primary cardbuttons';
+      projectButton.textContent = project.name; // Set the button text to the project name
+      projectButton.onclick = () => showTeamImage(); // Add the click event
+      projectsContainer.appendChild(projectButton);
+    });
   });
+ 
 }
 
 function showTeamImage() {
@@ -213,4 +246,51 @@ function showTeamImage() {
       container.style.display = 'none';
     }, 500); // Match the transition duration
   }
+}
+function Achivement() {
+  const achievements = [
+    // "Achievement 1: Successfully launched the product.",
+    "🏆<b>Motorolasolutions</b>:Successful Completion of IOT Security Policy Update Activity",
+    "🏆<b>Mindmill</b>:Early handover",
+    "🏆<b>eTrack</b>:creation of the new eTrack SOM environments.",
+    // "Achievement 4: Expanded to 10 countries."
+  ];
+
+  const cardsContainer = document.getElementById('cards-container');
+  cardsContainer.innerHTML = `
+    <div class="achivement">
+      ${achievements.map(item => `
+        <div class="achivement-list" style="display: flex; align-items: center; gap: 8px;">
+        
+          <span>${item}</span>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+window.addEventListener('load', videoScroll);
+window.addEventListener('scroll', videoScroll);
+
+function videoScroll() {
+
+  if ( document.querySelectorAll('video[autoplay]').length > 0) {
+    var windowHeight = window.innerHeight,
+        videoEl = document.querySelectorAll('video[autoplay]');
+
+    for (var i = 0; i < videoEl.length; i++) {
+
+      var thisVideoEl = videoEl[i],
+          videoHeight = thisVideoEl.clientHeight,
+          videoClientRect = thisVideoEl.getBoundingClientRect().top;
+
+      if ( videoClientRect <= ( (windowHeight) - (videoHeight*.5) ) && videoClientRect >= ( 0 - ( videoHeight*.5 ) ) ) {
+        thisVideoEl.play();
+      } else {
+        thisVideoEl.pause();
+      }
+
+    }
+  }
+
 }
