@@ -32,20 +32,39 @@
     <img src="assets/logo.png" class="logo"/>
   </div>
 
-   <div class="hero feature-box1"style= "padding-left: 20px;
-    padding-right: 20px;" >
-    <iframe
+  <div class="hero feature-box1" style="padding-left: 20px; padding-right: 20px;">
+   <!-- <iframe
     width="100%"
     height="100%"
-    
-    src="https://www.youtube.com/embed/_yhk8ECA6lU?si=-1GPqsYQjNDRwcT7"
+    src="assets/motion-animation3.mp4"
     title="Thingsteer Product Demo"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-     
+    allowfullscreen
+    autoplay>
+   </iframe>  -->
+   <div class='video-wrap'>
+    <video autoplay muted playsinline loop poster="http://placehold.it/350x350">
+      <source src="assets/yt1.mp4" type="video/mp4">
+      
+    </video>
   </div>
+  </div>
+
+  <!-- <div class="monitor-container">
+    <div class="monitor">
+      <div class="video-wrapper">
+        <iframe 
+            src="assets/motion-animation2.mp4" autoplay muted loop
+          title="Life at iSteer"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+    <div class="stand"></div>
+  </div> -->
+    </div>
 
 
 
@@ -77,10 +96,10 @@
   
  
   <button class="feature-box" onclick="scrollToTop();showCards('clients')"> Clients</button>
-  <button class="feature-box" onclick="scrollToTop();showCards('achievements')"> Achievements</button>
+  <button class="feature-box" onclick="scrollToTop();Achivement()"> Achievements</button>
 </section>
 <div id="team-image-container" style="display: none; text-align: center; margin-top: 20px; overflow: hidden; transition: max-height 0.5s ease;">
-  <img src="assets/team.png" alt="Team Image" style="width:80%; height:auto; object-fit: cover;" />
+  <img src="assets/team00.jpg" alt="Team Image" style="width:80%; height:auto; object-fit: cover;" />
 </div>
 
 <script>
